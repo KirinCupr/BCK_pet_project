@@ -16,13 +16,6 @@ class App:
             support_funcs.remove_from_list(digits, rand_number)
             temp_letters = input('Input letters for digit ' + str(rand_number) + ': ')
             temp_letters = temp_letters.upper()
-            # ToDo
-            # вспомнить, почему я не переписал рабочую версию кода на VStudio
-            # хз короче
-            # разобраться, как работают переменные в методах функций
-            # что-то еще... дописать эту функциюч
-            # сделать первый коммит этого кода
-            # и заккометить код на плюсах
             while (not self.codes.is_correct(rand_number, temp_letters)):
                 temp_letters = ''
                 print('Incorrect answer! Try again')
@@ -30,7 +23,5 @@ class App:
                 temp_letters = temp_letters.upper()
             print('Right!')
             size -= 1
+        print('Exercise had completed!')
         return 0
-            
-a = App()
-a.remember_letters()
