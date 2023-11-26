@@ -27,3 +27,4 @@ class Codes:
         return self.codes[i]
     def is_correct(self, i, letters):
         return (self.codes[i] == letters)
+        
