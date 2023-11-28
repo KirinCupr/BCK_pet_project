@@ -17,7 +17,8 @@ class App:
             support_funcs.remove_from_list(digits, rand_number)
             temp_letters = input('Input letters for digit ' + str(rand_number) + ': ')
             temp_letters = temp_letters.upper()
-            while (not self.codes.is_correct(rand_number, temp_letters, "check_letters")):
+            
+            while (not self.codes.is_correct(rand_number, temp_letters)):
                 temp_letters = ''
                 print('Incorrect answer! Try again')
                 temp_letters = input('Input letters for digit ' + str(rand_number) + ': ')
@@ -47,3 +48,26 @@ class App:
         print('Exercise had completed!')
         return 0
 
+    def practice_letters(self):
+        size = int(input('Enter count of number: '))
+        temp_values = [size]
+        
+        while(size):
+            rand_number = random.randint(10,99) #bla-bla write
+            if (rand_number in temp_values):
+                continue
+            temp_values.append(rand_number)
+            temp_letters = input('Input letters for number ' + str(rand_number) + ': ')
+            temp_letters = temp_letters.upper()
+            print(temp_letters[-2:])
+            #temp_letters[-2:]
+            while (not (self.codes.is_correct(rand_number//10, temp_letters[:2]) and
+                        self.codes.is_correct(rand_number%10, temp_letters[-2:]))):
+                temp_letters = ''
+                print('Incorrect answer! Try again')
+                temp_letters = input('Input letters for digit ' + str(rand_number) + ': ')
+                temp_letters = temp_letters.upper()
+            print('Right!')
+            size -= 1
+        print('Exercise had completed!')
+        return 0
