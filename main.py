@@ -1,4 +1,4 @@
 import app
          
 a = app.App()
-a.practice_letters()
+a.practice_digits()

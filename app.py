@@ -59,14 +59,34 @@ class App:
             temp_values.append(rand_number)
             temp_letters = input('Input letters for number ' + str(rand_number) + ': ')
             temp_letters = temp_letters.upper()
-            print(temp_letters[-2:])
-            #temp_letters[-2:]
+            
             while (not (self.codes.is_correct(rand_number//10, temp_letters[:2]) and
                         self.codes.is_correct(rand_number%10, temp_letters[-2:]))):
                 temp_letters = ''
                 print('Incorrect answer! Try again')
                 temp_letters = input('Input letters for digit ' + str(rand_number) + ': ')
                 temp_letters = temp_letters.upper()
+            print('Right!')
+            size -= 1
+        print('Exercise had completed!')
+        return 0
+    
+    def practice_digits(self):
+        size = int(input('Enter count of number: '))
+        temp_values = [size]
+        
+        while(size):
+            rand_number = random.randint(10,99) #bla-bla write
+            if (rand_number in temp_values):
+                continue
+            temp_values.append(rand_number)
+            temp_number = int(input('Input digits for ' + self.codes.get_value(rand_number//10) + self.codes.get_value(rand_number%10) + ': '))
+            
+            while (not (self.codes.is_correct(rand_number//10, self.codes.get_value(temp_number//10)) and
+                        self.codes.is_correct(rand_number%10, self.codes.get_value(temp_number%10)))):
+                temp_number = -1
+                print('Incorrect answer! Try again')
+                temp_number = int(input('Input digits for ' + self.codes.get_value(rand_number//10) + self.codes.get_value(rand_number%10) + ': '))
             print('Right!')
             size -= 1
         print('Exercise had completed!')
