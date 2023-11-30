@@ -91,3 +91,33 @@ class App:
             size -= 1
         print('Exercise had completed!')
         return 0
+    
+    def run(self):
+        titles = {
+            1: "remember_letters",
+            2: "remember_digits",
+            3: "practice_letters",
+            4: "practice_digits",
+                }
+
+        print('Greetings, my Dude!')
+        print('Choose wisely what You want!')
+        choise = 1
+        while (1 <= choise < 5):
+            for i, v in titles.items():
+                print(str(i) + '. ' + v)
+            
+            print("Enter 0 or another digit to exit")
+            print('What is Your choise, my Dude?')
+            choise = int(input('>> '))
+            if (choise == 1):
+                self.remember_letters()
+            elif (choise == 2):
+                self.remember_digits()
+            elif (choise == 3):
+                self.practice_letters()
+            elif (choise == 4):
+                self.practice_digits()
+            else:
+                print('Goodbye, my Dude!')
+        return 0
