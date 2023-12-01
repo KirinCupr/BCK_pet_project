@@ -100,15 +100,15 @@ class App:
             4: "practice_digits",
                 }
 
-        print('Greetings, my Dude!')
-        print('Choose wisely what You want!')
+        support_funcs.awesome_print('Greetings, my Dude!')
+        support_funcs.awesome_print('Choose wisely what You want!')
         choise = 1
         while (1 <= choise < 5):
             for i, v in titles.items():
                 print(str(i) + '. ' + v)
             
-            print("Enter 0 or another digit to exit")
-            print('What is Your choise, my Dude?')
+            support_funcs.awesome_print("Enter 0 or another digit to exit")
+            support_funcs.awesome_print('What is Your choise, my Dude?')
             choise = int(input('>> '))
             if (choise == 1):
                 self.remember_letters()
@@ -119,5 +119,5 @@ class App:
             elif (choise == 4):
                 self.practice_digits()
             else:
-                print('Goodbye, my Dude!')
+                support_funcs.awesome_print('Goodbye, my Dude!')
         return 0
